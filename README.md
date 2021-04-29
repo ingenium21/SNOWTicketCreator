@@ -3,6 +3,7 @@
 
 ## Tasks I need this script to complete
 * ask me for the resolution
+* ~~successfully load servicNow page~~
 * Successfully load redirect to my.policy
 * input username and password 
 * wait for MFA portion
