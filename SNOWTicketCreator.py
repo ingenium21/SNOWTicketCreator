@@ -8,7 +8,6 @@ import time
 
 options = Options()
 options.headless = True
-options.add_argument('--disable-gpu') 
 CHROMEDRIVER_PATH = """C:\\users\\renat\\AppData\\Local\\Temp\\Rar$EXa26408.26884\\chromedriver.exe"""
 driver = webdriver.Chrome(CHROMEDRIVER_PATH, options=options)
 driver.get("https://ironbow.servicenowservices.com/")
@@ -17,7 +16,7 @@ driver.find_element_by_name("password1").send_keys("IBIwuoma0amIwuoma0am")
 driver.find_element_by_xpath("""//*[@id="submit_row"]/td/input""").click()
 time.sleep(3)
 driver.switch_to_frame('tp_frame') 
-time.sleep(10)
+time.sleep(6)
 driver.find_element_by_xpath("""//*[@id="auth_methods"]/fieldset/div[1]/button""").click()
-time.sleep(5)
+WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'mainBannerImage16')))
 print(driver.title)
