@@ -8,7 +8,7 @@ import time
 
 options = Options()
 options.headless = True
-CHROMEDRIVER_PATH = """C:\\users\\renat\\AppData\\Local\\Temp\\Rar$EXa26408.26884\\chromedriver.exe"""
+CHROMEDRIVER_PATH = """C:\\users\\renat\\chromedriver.exe"""
 driver = webdriver.Chrome(CHROMEDRIVER_PATH, options=options)
 driver.get("https://ironbow.servicenowservices.com/")
 driver.find_element_by_name("username").send_keys("rregalado")
@@ -19,4 +19,6 @@ driver.switch_to_frame('tp_frame')
 time.sleep(6)
 driver.find_element_by_xpath("""//*[@id="auth_methods"]/fieldset/div[1]/button""").click()
 WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, 'mainBannerImage16')))
-print(driver.title)
+
+if (__name__ == "__main__"):
+    print(driver.title)
