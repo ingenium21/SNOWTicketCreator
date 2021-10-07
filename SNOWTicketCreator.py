@@ -16,14 +16,14 @@ def menu_options():
 if (__name__ == "__main__"):
     options = Options()
     options.headless = True
-    CHROMEDRIVER_PATH = """C:\\users\\renat\\chromedriver.exe"""
+    CHROMEDRIVER_PATH = """C:\\users\\renat\\chromedriver.exe""" #you will need to download chromedriver.exe and place the path to it here
     driver = webdriver.Chrome(CHROMEDRIVER_PATH, options=options)
     driver.maximize_window()
     executor_url = driver.command_executor._url
     session_id = driver.session_id
-    driver.get("https://ironbow.servicenowservices.com/")
-    driver.find_element_by_name("username").send_keys("") #fill ironbow username between the quotes
-    driver.find_element_by_name("password1").send_keys("") #fill ironbow password between the quotes
+    driver.get("") #fill ib url between the quotes
+    driver.find_element_by_name("username").send_keys("") #fill ib username between the quotes
+    driver.find_element_by_name("password1").send_keys("") #fill ib password between the quotes
     driver.find_element_by_xpath("""//*[@id="submit_row"]/td/input""").click()
     time.sleep(3)
     driver.switch_to_frame('tp_frame')
