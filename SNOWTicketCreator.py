@@ -22,8 +22,8 @@ if (__name__ == "__main__"):
     executor_url = driver.command_executor._url
     session_id = driver.session_id
     driver.get("https://ironbow.servicenowservices.com/")
-    driver.find_element_by_name("username").send_keys("rregalado")
-    driver.find_element_by_name("password1").send_keys("IBIwuoma0amIwuoma0am")
+    driver.find_element_by_name("username").send_keys("") #fill ironbow username between the quotes
+    driver.find_element_by_name("password1").send_keys("") #fill ironbow password between the quotes
     driver.find_element_by_xpath("""//*[@id="submit_row"]/td/input""").click()
     time.sleep(3)
     driver.switch_to_frame('tp_frame')
